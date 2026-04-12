@@ -1,0 +1,7 @@
+sudo dnf install openmpi openmpi-devel
+module avail
+module load mpi/openmpi-x86_64
+mpicc --version
+mpirun --version
+mpicc filename.c -o filename
+mpirun -np 1 ./filename
