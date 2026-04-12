@@ -3,5 +3,10 @@ module avail
 module load mpi/openmpi-x86_64
 mpicc --version
 mpirun --version
+
+
+how to run mpi code : 
+echo $PATH
+export $PATH=$PATH:/usr/lib64/openmpi/bin/
 mpicc filename.c -o filename
 mpirun -np 1 ./filename
