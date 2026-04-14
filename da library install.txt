@@ -1,0 +1,34 @@
+pip install scikit-learn
+pip install matplotlib
+pip install pandas
+pip install numpy
+pip install mlxtend
+!pip install mlxtend
+pip install nltk
+pip install wordcloud
+nltk.download('punkt')
+import pandas as pd
+import numpy as np
+from sklearn import metrics
+import seaborn as sn
+import matplotlib.pyplot as plt
+
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import r2_score,mean_squared_error
+from sklearn.metrics import confusion_matrix, accuracy_score, recall_score
+from mlxtend.frequent_patterns import apriori, association_rules
+stopwords.words('English')
+from nltk.tokenize import sent_tokenize
+from nltk.tokenize import word_tokenize
+from nltk.probability import FreqDist
+nltk.download('stopwords')
+from nltk.corpus import stopwords
+from nltk.stem import PorterStemmer
+from nltk.donwnload ('wordnet')
+from nltk.donwload('omw-1.4')
+from nltk.stem.wordnet import WordNetLemmatizer
+from nltk.sentiment.vader import SetimentIntisityAnalyzer
+nltk.download('vader_lexicon')
+from mlxtend.preprocessing import TransactionEncoder

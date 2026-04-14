@@ -1,0 +1,23 @@
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import r2_score
+data = {
+'Height': [150,155,160,163,165,168,170,172,175,178,
+180,182,185,158,162,167,173,176,183,157],
+'Weight': [45, 50, 55, 57, 59, 62, 65, 67, 70, 74,
+76, 79, 83, 51, 54, 61, 68, 71, 80, 49]
+}
+df = pd.DataFrame(data)
+print(df)
+X = df[['Height']]
+y = df['Weight']
+X_train, X_test, y_train, y_test = train_test_split(
+X, y, test_size=0.3, random_state=0)
+print('Training Set:'); print(pd.concat([X_train,y_train],axis=1))
+print('Testing Set:'); print(pd.concat([X_test, y_test], axis=1))
+model = LinearRegression()
+model.fit(X_train, y_train)
+y_pred = model.predict(X_test)
+print('Predicted:', y_pred.astype(int).tolist())
+print('R2 Score :', r2_score(y_test, y_pred))

@@ -1,0 +1,33 @@
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+import matplotlib.pyplot as plt
+
+# Create User Dataset
+data = {
+    'Age': [25, 30, 35, 40, 45],
+    'Salary': [30000, 40000, 50000, 60000, 70000]
+}
+
+df = pd.DataFrame(data)
+
+# Independent and dependent variables
+X = df[['Age']]
+y = df['Salary']
+
+# Build Linear Regression Model
+model = LinearRegression()
+model.fit(X, y)
+
+# Prediction
+pred = model.predict(X)
+
+# Display prediction
+print("Predicted Salary:", pred)
+
+# Plot Graph
+plt.scatter(X, y)
+plt.plot(X, pred)
+plt.xlabel("Age")
+plt.ylabel("Salary")
+plt.title("Simple Linear Regression")
+plt.show()

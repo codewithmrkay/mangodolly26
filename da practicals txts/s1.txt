@@ -1,0 +1,35 @@
+
+
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+
+data = {
+    'Position': ['Business Analyst','Junior Consultant','Senior Consultant',
+                 'Manager','Country Manager','Region Manager',
+                 'Partner','Senior Partner','C-level','CEO'],
+    'Level':  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    'Salary': [45000, 50000, 60000, 80000, 110000,
+               150000, 200000, 300000, 500000, 1000000]
+}
+
+df = pd.DataFrame(data)
+print("Dataset:\n", df)
+
+X = df[['Level']]
+y = df['Salary']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0)
+
+print("\nTraining Set (70%):\n", pd.DataFrame({'Level': X_train['Level'], 'Salary': y_train}))
+print("\nTesting Set (30%):\n", pd.DataFrame({'Level': X_test['Level'], 'Salary': y_test}))
+
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+print("\nIntercept :", model.intercept_)
+print("Coefficient:", model.coef_[0])
+
+y_pred = model.predict(X_test)
+print("\nPredicted vs Actual:")
+print(pd.DataFrame({'Actual': y_test, 'Predicted': y_pred.astype(int)}))
