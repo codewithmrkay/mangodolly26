@@ -1,0 +1,21 @@
+postgres=# create database employee;
+CREATE DATABASE
+postgres=# \c
+You are now connected to database "postgres" as user "postgres".
+postgres=# create table employee( eno int primary key,ename varchar(20), salary int);
+CREATE TABLE
+postgres=#
+
+
+INSERT INTO employees (name, role)
+VALUES 
+    ('Alice', 'Manager'),
+    ('Bob', 'Developer'),
+    ('Charlie', 'Designer');
+
+
+
+C:\xampp\tomcat\webapps\vkjsp>set path="C:\Program Files\java\jdk-25.0.2\bin";
+C:\xampp\tomcat\webapps\vkjsp>javac -cp .;postgresql-42.7.4.jar slip2q1.java
+C:\xampp\tomcat\webapps\vkjsp>java -cp .;postgresql-42.7.4.jar slip2q1
+
